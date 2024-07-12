@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-09 19:34:46.430506",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gf4u",
+  "amended_from",
+  "branch",
+  "employee",
+  "column_break_agjq",
+  "department",
+  "frequency",
+  "column_break_yuhn",
+  "from_date",
+  "is_replicated",
+  "to_date",
+  "section_break_cmpt",
+  "get_employees",
+  "employees",
+  "define_shifts_section",
+  "shifts"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gf4u",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Shift Roaster",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_agjq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cmpt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employees",
+   "fieldtype": "Table",
+   "label": "Employees",
+   "options": "Employees Table",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_yuhn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_replicated",
+   "fieldtype": "Check",
+   "label": "Is Replicated"
+  },
+  {
+   "depends_on": "eval:doc.is_replicated == 1 ;",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory_depends_on": "eval:doc.is_replicated == 1 ;"
+  },
+  {
+   "fieldname": "get_employees",
+   "fieldtype": "Button",
+   "label": "Get Employees"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "\nWeekly\nBi Weekly\nMonthly",
+   "reqd": 1
+  },
+  {
+   "fieldname": "define_shifts_section",
+   "fieldtype": "Section Break",
+   "label": "Define Shifts"
+  },
+  {
+   "fieldname": "shifts",
+   "fieldtype": "Table",
+   "label": "Shifts",
+   "options": "Shift Pattern",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-10 19:30:02.489419",
+ "modified_by": "Administrator",
+ "module": "Shift Roaster",
+ "name": "Shift Roaster",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
